@@ -1,0 +1,57 @@
+{% extends 'base.html'%}{% block title %} PSU Online Vaccination {% endblock %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'navbardesign.css')}}">
+<h1 align="center">Appointment</h1>
+
+<p>Submit a valid ID</p>
+<form action="https://sheetdb.io/api/v1/x5kv1zvz3axzr" method="POST" id="sheetdb-form">
+  <input type="file" id="myfile" name="myfile"><br><br>
+
+
+<label for="choose">Select a Vaccine:</label>
+<select id="choose4" name="choose5" form="choose6">
+	<option value="select">Select</option>
+	<option value="pfizer">Pfizer</option>
+	<option value="moderna">Moderna</option>
+	<option value="johnson&johnson">Johnson&Johnson</option> <option value="sinovac">Sinovac</option>
+	<option value="aztrazeneca">Atrazeneca</option>
+</select>
+<br>
+<br>
+	<p>I hereby declare that all the given information are accurate.</p>
+    <input type="radio" id="agree" name="age" value="MALE">
+    <label for="agree">I Agree</label><br>
+    <input type="radio" id="disagree" name="age" value="MALE">
+    <label for="disagree">I Disagree</label><br>
+
+
+<br>
+	<a href="/PS1">
+<button class="btn btn-success" type="submit" >Register</button>
+</a>
+
+</form>
+
+<a href="/survey1">
+<button class="btn btn-outline-primary" type="submit">Back</button>
+</a>
+
+
+
+<script>
+  var form = document.getElementById('sheetdb-form');
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    fetch(form.action, {
+        method : "POST",
+        body: new FormData(document.getElementById("sheetdb-form")),
+    }).then(
+        response => response.json()
+    ).then((html) => {
+      // you can put any JS code here
+      alert('success')
+    });
+  });
+</script>
+
+{% endblock %}

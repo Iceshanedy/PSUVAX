@@ -1,0 +1,239 @@
+{% extends "base.html" %} {% block title %}1st Dose{% endblock %} {% block
+content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'navbardesign.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'form.css')}}">
+
+<form action="https://sheetdb.io/api/v1/0kh6rll9ves32" method="POST" id="sheetdb-form" >
+
+  <h2 align="center">1st Dose</h2>
+
+  <div class="form-group">
+    <label for="fullname">Full Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="fullname"
+      name="data[fullname]"
+      placeholder="Enter full name"
+
+
+    />
+  </div>
+ <div class="form-group">
+
+    <p>Gender</p>
+  <input type="radio" id="male" name="data[gender]" value="MALE">
+  <label for="male">Male</label><br>
+  <input type="radio" id="female" name="data[gender]" value="FEMALE">
+  <label for="female">Female</label><br>
+  <input type="radio" id="others" name="data[gender]" value="OTHERS">
+  <label for="others">Others</label>
+
+     <p>Age</p>
+  <input type="radio" id="18" name="data[age]" value="18 - 59 years old">
+  <label for="18">18 - 59 years old</label><br>
+  <input type="radio" id="60" name="data[age]" value="60 years and above">
+  <label for="60">60 years and above</label><br>
+
+  <div class="form-group">
+    <label for="email">Email Address</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      name="data[email]"
+      placeholder="Enter email"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="phone-number">Phone Number</label>
+    <input
+      type="text"
+      class="form-control"
+      id="phone-number"
+      name="data[phone]"
+      placeholder="(+63) 000-000-0000"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="address">Address</label>
+    <input
+      type="text"
+      class="form-control"
+      id="address"
+      name="data[street]"
+      placeholder="Enter street address"
+    />
+    <small id="st" class="form-text text-muted">example: #123 daniel maramba st., Poblacion Norte</small>
+  </div>
+
+  <div class="form-group">
+    <label for="address1"></label>
+    <input
+      type="text"
+      class="form-control"
+      id="address1"
+      name="data[city]"
+      placeholder="Enter town or city"
+    />
+  </div>
+  <div class="form-group">
+    <label for="address2"></label>
+    <input
+      type="text"
+      class="form-control"
+      id="address2"
+      name="data[province]"
+      placeholder="Enter province"
+    />
+  </div>
+  <div class="form-group">
+    <label for="address3"></label>
+    <input
+      type="text"
+      class="form-control"
+      id="address3"
+      name="data[zip]"
+      placeholder="Enter postal/zip-code"
+    />
+  </div>
+<br>
+<hr class="new4">
+
+<h2 align="center">Health and Medication History</h2>
+
+  <div class="form-group">
+    <label for="question1">Do you have any chronic health condition?</label><br>
+    <textarea id='question1' name= 'data[health]' rows="4" cols="150" placeholder="Describe yourself here..."></textarea>
+    <small id="emailHelp" class="form-text text-muted">Please indicate all health issues that are considered within the risk group</small>
+  </div><br>
+
+
+
+    <label for="Medication">Please list your current medication</label><br>
+  <div class="form-row">
+    <div class="col-md-2 mb-3">
+
+      <input type="text" class="form-control" id="Medication" name="data[med]" placeholder="Medication">
+    </div>
+    <div class="col-md-2 mb-3">
+      <input type="text" class="form-control" id="Dosage" name="data[dose]" placeholder="Dosage">
+    </div>
+
+    </div>
+
+    <label for="allergy">Please list your allergies</label><br>
+  <div class="form-row">
+    <div class="col-md-2 mb-3">
+      <input type="text" class="form-control" id="allergy" name="data[allergy]" placeholder="Allergic to">
+    </div>
+
+    </div>
+
+
+  <br><p>Please check  the symptoms  that apply</p>
+  <input type="checkbox" id="symp1" name="data[symp1]" value="Loss of taste or smell">
+  <label for="symp1">Loss of taste or smell</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+  <input type="checkbox" id="symp2" name="data[symp2]" value="High Fever">
+  <label for="symp2">High Fever</label><br>
+  <input type="checkbox" id="symp3" name="data[symp3]" value="Difficulty in Breathing">
+  <label for="symp3">Difficulty in Breathing</label>&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;
+  <input type="checkbox" id="symp4" name="data[symp4]" value="Body Aches">
+  <label for="symp4"> Body Aches</label><br>
+  <input type="checkbox" id="symp5" name="data[symp5]" value="Runny Nose">
+  <label for="symp5">Runny Nose</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+  <input type="checkbox" id="symp6" name="data[symp6]" value="Diarrhea">
+  <label for="symp6"> Diarrhea</label><br>
+  <input type="checkbox" id="symp7" name="data[symp7]" value="Cough">
+  <label for="symp7"> Cough</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
+  <input type="checkbox" id="symp8" name="data[symp8]" value="Diarrhea">
+  <label for="symp8">Persistant pain or pressure on chest</label><br>
+  <input type="checkbox" id="symp9" name="data[symp9]" value="Nasal congestion">
+  <label for="symp9"> Nasal Congestion</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;&nbsp;&nbsp;
+  <input type="checkbox" id="symp10" name="data[symp10]" value="Sore throat">
+  <label for="symp10">Sore throat</label><br>
+  <input type="checkbox" id="none" name="data[none]" value="None">
+  <label for="none"> None </label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;
+  <input type="checkbox" id="other" name="data[other]" value="Other">
+  <label for="other"> Other</label><br><br>
+
+  <p>Have you been diagnosed with  COVID-19?</p>
+  <input type="radio" id="yes" name="data[yes]" value="YES">
+  <label for="yes">Yes</label><br>
+  <input type="radio" id="no" name="data[no]" value="NO">
+  <label for="no">No</label><br>
+
+  <div class="form-group">
+    <label for="ifyes">If yes, please provide further details(date of diagnosis, were you hospitalized or not,treatment,etc.)</label><br>
+    <textarea id='ifyes' name= 'data[ifyes]' rows="4" cols="150" placeholder="Describe yourself here..."></textarea>
+  </div>
+  <br>
+<hr class="new4">
+  <h1 align="center">Appointment</h1>
+
+<p>Submit a valid ID</p>
+
+  <input type="file" id="myfile" name="data[myfile]"><br><br>
+
+
+<label>What vaccine did you take?</label>
+<select id="vaccine" name="data[vaccine]">
+	<option value="select">Select</option>
+	<option value="pfizer">Pfizer</option>
+	<option value="moderna">Moderna</option>
+	<option value="johnson&johnson">Johnson&Johnson</option>
+    <option value="sinovac">Sinovac</option>
+	<option value="aztrazeneca">Atrazeneca</option>
+</select>
+<br>
+  <div class="form-group">
+
+  <label for="Schedule">What date did you get FULLY VACCINATED?</label>
+  <input
+          type="datetime-local"
+          id="Schedule"
+          name="data[Schedule]"/>
+  </div>
+  <br>
+     <label for="terms_and_conditions">I agree that the given informations are accurate:</label>
+        <input type="checkbox" id="terms_and_conditions" value="1" onclick="terms_changed(this)" />
+<br>
+   <br>
+
+ <button type="submit" class="btn btn-outline btn-success" id="submit_button" disabled>Register</button>
+
+
+</form>
+
+<script>
+ var form = document.getElementById('sheetdb-form');
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    fetch(form.action, {
+        method : "POST",
+        body: new FormData(document.getElementById("sheetdb-form")),
+    }).then(
+        response => response.json()
+    ).then((html) => {
+      alert('success')
+    });
+  });
+</script>
+<script>
+ //JavaScript function that enables or disables a submit button depending
+//on whether a checkbox has been ticked or not.
+function terms_changed(termsCheckBox){
+    //If the checkbox has been checked
+    if(termsCheckBox.checked){
+        //Set the disabled property to FALSE and enable the button.
+        document.getElementById("submit_button").disabled = false;
+    } else{
+        //Otherwise, disable the submit button.
+        document.getElementById("submit_button").disabled = true;
+    }
+}
+</script>
+
+{% endblock %}

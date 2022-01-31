@@ -1,0 +1,86 @@
+{% extends 'base.html'%}{% block title %}
+1st Dose
+{% endblock %}
+{% block content %}
+<form method="POST">
+
+  <h2 align="center">Health and Medication History</h2>
+
+  <div class="form-group">
+    <label for="question1">Do you have any chronic health condition?</label><br>
+    <textarea id='question1' name= 'question1' rows="4" cols="150" placeholder="Describe yourself here..."></textarea>
+    <small id="emailHelp" class="form-text text-muted">Please indicate all health issues that are considered within the risk group</small>
+  </div><br>
+
+
+  <form>
+    <label for="Medication">Please list your current medication</label><br>
+  <div class="form-row">
+    <div class="col-md-2 mb-3">
+
+      <input type="text" class="form-control" id="Medication" placeholder="Medication">
+    </div>
+    <div class="col-md-2 mb-3">
+      <input type="text" class="form-control" id="Dosage" placeholder="Dosage">
+    </div>
+    <button class="btn btn-primary" type="submit">Save</button>
+    </div>
+  </form>
+  <form>
+    <label for="allergy">Please list your allergies</label><br>
+  <div class="form-row">
+    <div class="col-md-2 mb-3">
+      <input type="text" class="form-control" id="allergy" placeholder="Allergic to">
+    </div>
+    <button class="btn btn-primary" type="submit">Save</button>
+    </div>
+  </form>
+
+  <br><p>Please check  the symptoms  that apply</p>
+  <input type="checkbox" id="symp1" name="symp1" value="Loss of taste or smell">
+  <label for="symp1">Loss of taste or smell</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+  <input type="checkbox" id="symp2" name="symp2" value="High Fever">
+  <label for="symp2">High Fever</label><br>
+  <input type="checkbox" id="symp3" name="symp3" value="Difficulty in Breathing">
+  <label for="symp3">Difficulty in Breathing</label>&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;
+  <input type="checkbox" id="symp4" name="symp4" value="Body Aches">
+  <label for="symp4"> Body Aches</label><br>
+  <input type="checkbox" id="symp5" name="symp5" value="Runny Nose">
+  <label for="symp5">Runny Nose</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+  <input type="checkbox" id="symp6" name="symp6" value="Diarrhea">
+  <label for="symp6"> Diarrhea</label><br>
+  <input type="checkbox" id="symp7" name="symp7" value="Cough">
+  <label for="symp7"> Cough</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
+  <input type="checkbox" id="symp8" name="symp8" value="Diarrhea">
+  <label for="symp8">Persistant pain or pressure on chest</label><br>
+  <input type="checkbox" id="symp9" name="symp9" value="Nasal congestion">
+  <label for="symp9"> Nasal Congestion</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;&nbsp;&nbsp;
+  <input type="checkbox" id="symp10" name="symp10" value="Sore throat">
+  <label for="symp10">Sore throat</label><br>
+  <input type="checkbox" id="none" name="none" value="None">
+  <label for="none"> None </label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;
+  <input type="checkbox" id="other" name="other" value="Sore throat">
+  <label for="other"> Other</label><br><br>
+
+  <p>Have you been diagnosed with  COVID-19?</p>
+  <input type="radio" id="yes" name="yes" value="YES">
+  <label for="yes">Yes</label><br>
+  <input type="radio" id="no" name="no" value="NO">
+  <label for="no">No</label><br>
+
+  <div class="form-group">
+    <label for="ifyes">If yes, please provide further details(date of diagnosis, were you hospitalized or not,treatment,etc.)</label><br>
+    <textarea id='ifyes' name= 'ifyes' rows="4" cols="150" placeholder="Describe yourself here..."></textarea>
+  </div>
+
+</form>
+
+
+<a href="/1st-dose">
+<button class="btn btn-outline-primary" type="submit">Previous</button>
+</a>
+
+<a href="/PS1">
+<button class="btn btn-outline-primary" type="submit">Next</button>
+</a>
+  {% endblock %}
